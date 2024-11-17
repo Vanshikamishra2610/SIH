@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>home</title>
+
+   
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+
+   
+   <link rel="stylesheet" href="css/style.css">
+
+   
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.2/main.min.css">
+
+   
+   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body>
+
+<header class="header">
+   
+   <section class="flex">
+
+      <a href="home.html" class="logo">VIDYASETU.</a>
+
+      <form action="search.html" method="post" class="search-form">
+         <input type="text" name="search_box" required placeholder="search..." maxlength="100">
+         <button type="submit" aria-label="Search"><i class="fas fa-search"></i></button>
+      </form>
+
+      <div class="icons">
+         <div id="menu-btn" class="fas fa-bars" role="button" aria-label="Open menu"></div>
+         <div id="search-btn" class="fas fa-search" role="button" aria-label="Open search"></div>
+         <div id="user-btn" class="fas fa-user" role="button" aria-label="User profile"></div>
+         <div id="toggle-btn" class="fas fa-sun" role="button" aria-label="Toggle light/dark mode"></div>
+      </div>
+
+
+
+   </section>
+
+</header>   
+
+<div class="side-bar">
+
+   <div id="close-btn">
+      <i class="fas fa-times"></i>
+   </div>
+
+   <div class="profile">
+      <img src="images/pic-1.jpg" class="image" alt="Profile picture of Student's Name">
+      <h3 class="name">Student's Name</h3>
+      <p class="role">Student</p>
+      <a href="profile.html" class="btn">view profile</a>
+   </div>
+
+   <nav class="navbar">
+      <a href="home.html"><i class="fas fa-home"></i><span>home</span></a>
+      <a href="Acedemic_Performance.html"><i class="fas fa-question"></i><span>Acedemic_Performance</span></a>
+      <a href="Guidance.html"><i class="fas fa-graduation-cap"></i><span>Guidance</span></a>
+      <a href="teachers.html"><i class="fas fa-chalkboard-user"></i><span>teachers</span></a>
+      <a href="contact.html"><i class="fas fa-headset"></i><span>contact us</span></a>
+   </nav>
+
+</div>
+
+<section class="home-grid">
+
+   <h1 class="heading">Education is not preparation for life; education is life itself.</h1>
+
+   <div class="box-container">
+
+      
+      <div class="box">
+         <h3 class="title">Thought of the Day</h3>
+         <p class="thought">"The beautiful thing Acedemic_Performance learning is that no one can take it away from you." - B.B. King</p>
+         <p class="thought">"VIDYASETUtion is the most powerful weapon which you can use to change the world." - Nelson Mandela</p>
+         <p class="thought">"Develop a passion for learning. If you do, you will never cease to grow." - Anthony J. D'Angelo</p>
+         <a href="#" class="inline-btn">explore more thoughts</a>
+      </div>
+
+      
+      <div class="box">
+         <h3 class="title">Academic Calendar</h3>
+         <div id="calendar"></div> 
+         <p class="likes">Upcoming Events: <span>3</span></p>
+         <a href="#" class="inline-btn">view calendar</a>
+      </div>
+
+      
+      <div class="box">
+         <h3 class="title">Attendance</h3>
+         <canvas id="attendanceChart" width="400" height="200"></canvas> 
+         <p class="likes">Total Attendance: <span>85%</span></p>
+         <p class="likes">Absent Days: <span>3</span></p>
+         <a href="#" class="inline-btn">view detailed attendance</a>
+      </div>
+
+   </div>
+
+</section>
+
+<section class="notices">
+
+   <h1 class="heading">Notice Board</h1>
+
+   <div class="box-container">
+
+      
+      <div class="box">
+         <h3 class="title">Important Notices</h3>
+         <ul>
+            <li>Exam registration deadline extended to Oct 15, 2024.</li>
+            <li>New campus safety guidelines effective from Nov 1, 2024.</li>
+            <li>Graduation ceremony on Dec 5, 2024. Don't miss it!</li>
+         </ul>
+         <a href="notices.html" class="inline-btn">view all notices</a>
+      </div>
+
+      
+      <div class="box">
+         <h3 class="title">Motivational Content</h3>
+         <p>"Your time is limited, don't waste it living someone else's life. Don't be trapped by dogma – which is living with the results of other people's thinking." - Steve Jobs</p>
+         <p>"Success is not final, failure is not fatal: It is the courage to continue that counts." - Winston Churchill</p>
+         <a href="#" class="inline-btn">read more motivational content</a>
+      </div>
+
+   </div>
+
+</section>
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.2/main.min.js"></script>
+<script>
+   document.addEventListener('DOMContentLoaded', function() {
+      var calendarEl = document.getElementById('calendar');
+      var calendar = new FullCalendar.Calendar(calendarEl, {
+         initialView: 'dayGridMonth',
+         events: [
+            { title: 'Math Exam', start: '2024-10-05' },
+            { title: 'Science Fair', start: '2024-10-12' },
+            { title: 'Winter Break', start: '2024-12-20', end: '2025-01-04' }
+         ]
+      });
+      calendar.render();
+   });
+</script>
+
+
+<script>
+   var ctx = document.getElementById('attendanceChart').getContext('2d');
+   var attendanceChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+         labels: ['January', 'February', 'March', 'April', 'May'],
+         datasets: [{
+            label: 'Attendance (%)',
+            data: [90, 85, 88, 80, 92],
+            backgroundColor: 'rgba(54, 162, 235, 0.6)',
+            borderColor: 'rgba(54, 162, 235, 1)',
+            borderWidth: 1
+         }]
+      },
+      options: {
+         scales: {
+            y: {
+               beginAtZero: true
+            }
+         }
+      }
+   });
+</script>
+
+
+<script src="js/script.js"></script>
+
+</body>
+</html>

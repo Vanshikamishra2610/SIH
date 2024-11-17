@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Acedemic_Performance</title>
+
+   
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+
+   
+   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+   
+   <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="header">
+   <section class="flex">
+      <a href="home.html" class="logo">VIDYASETU.</a>
+
+      <form action="search.html" method="post" class="search-form">
+         <input type="text" name="search_box" required placeholder="Searchs..." maxlength="100">
+         <button type="submit" class="fas fa-search"></button>
+      </form>
+
+      <div class="icons">
+         <div id="menu-btn" class="fas fa-bars"></div>
+         <div id="search-btn" class="fas fa-search"></div>
+         <div id="user-btn" class="fas fa-user"></div>
+         <div id="toggle-btn" class="fas fa-sun"></div>
+      </div>
+
+      <div class="profile">
+         <img src="images/pic-1.jpg" class="image" alt="Profile picture of Student's Name">
+         <h3 class="name">Student's Name</h3>
+         <p class="role">Student</p>
+         <a href="profile.html" class="btn">View Profile</a>
+         <div class="flex-btn">
+            <a href="login.html" class="option-btn">Login</a>
+            <a href="register.html" class="option-btn">Register</a>
+         </div>
+      </div>
+   </section>
+</header>
+
+<div class="side-bar">
+   <div id="close-btn">
+      <i class="fas fa-times"></i>
+   </div>
+
+   <div class="profile">
+      <img src="images/pic-1.jpg" class="image" alt="Profile picture of Student's Name">
+      <h3 class="name">Student's Name</h3>
+      <p class="role">Student</p>
+      <a href="profile.html" class="btn">View Profile</a>
+   </div>
+
+   <nav class="navbar">
+      <a href="home.html"><i class="fas fa-home"></i><span>Home</span></a>
+      <a href="Acedemic_Performance.html"><i class="fas fa-chart-line"></i><span>Acedemic_Performance</span></a>
+      <a href="Guidance.html"><i class="fas fa-graduation-cap"></i><span>Guidance</span></a>
+      <a href="teachers.html"><i class="fas fa-chalkboard-user"></i><span>Teachers</span></a>
+      <a href="contact.html"><i class="fas fa-headset"></i><span>Contact Us</span></a>
+   </nav>
+</div>
+
+<section class="performance">
+   <h1 class="heading">Acedemic_Performance</h1>
+   <div class="report-card">
+      <h2>Report Card</h2>
+      <table>
+         <thead>
+            <tr>
+               <th>Subject</th>
+               <th>Grade</th>
+               <th>Credits</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td>Mathematics</td>
+               <td>A</td>
+               <td>4</td>
+            </tr>
+            <tr>
+               <td>Science</td>
+               <td>B+</td>
+               <td>3</td>
+            </tr>
+            <tr>
+               <td>History</td>
+               <td>A-</td>
+               <td>3</td>
+            </tr>
+            
+         </tbody>
+      </table>
+   </div>
+
+   <div class="academic-performance">
+      <h2>Academic Performance</h2>
+      <canvas id="performanceChart" width="400" height="200"></canvas>
+   </div>
+</section>
+
+<footer class="footer">
+   &copy; <span id="current-year"></span>  
+</footer>
+
+
+<script src="js/script.js"></script>
+<script>
+  
+
+   
+   const ctx = document.getElementById('performanceChart').getContext('2d');
+   new Chart(ctx, {
+      type: 'bar',
+      data: {
+         labels: ['Mathematics', 'Science', 'History'],
+         datasets: [{
+            label: 'Grades',
+            data: [90, 85, 88], 
+            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+            borderColor: 'rgba(75, 192, 192, 1)',
+            borderWidth: 1
+         }]
+      },
+      options: {
+         scales: {
+            y: {
+               beginAtZero: true
+            }
+         }
+      }
+   });
+</script>
+
+</body>
+</html>

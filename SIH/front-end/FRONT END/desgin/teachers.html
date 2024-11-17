@@ -1,0 +1,222 @@
+<<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Teacher Profile</title>
+
+   
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+
+   
+   <link rel="stylesheet" href="css/style.css">
+
+   <style>
+      
+      .online-ptm {
+         padding: 20px;
+         background-color: #f9f9f9;
+      }
+
+      .booking-form {
+         max-width: 600px;
+         margin: 0 auto;
+         background-color: #fff;
+         padding: 20px;
+         border-radius: 8px;
+         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .booking-form h2 {
+         margin-bottom: 15px;
+      }
+
+      .booking-form label {
+         display: block;
+         margin-bottom: 5px;
+         font-weight: bold;
+      }
+
+      .booking-form input, .booking-form textarea {
+         width: 100%;
+         padding: 10px;
+         margin-bottom: 15px;
+         border: 1px solid #ddd;
+         border-radius: 4px;
+      }
+
+      .booking-form button {
+         background-color: #4CAF50;
+         color: #fff;
+         padding: 10px 20px;
+         border: none;
+         border-radius: 4px;
+         cursor: pointer;
+      }
+
+      .booking-form button:hover {
+         background-color: #45a049;
+      }
+
+      .teacher-updates {
+         padding: 20px;
+         background-color: #f3f3f3;
+      }
+
+      .teacher-updates h2 {
+         text-align: center;
+         margin-bottom: 20px;
+      }
+
+      .updates-list {
+         max-width: 800px;
+         margin: 0 auto;
+         background-color: #fff;
+         padding: 20px;
+         border-radius: 8px;
+         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .update-item {
+         border-bottom: 1px solid #ddd;
+         padding: 15px 0;
+      }
+
+      .update-item:last-child {
+         border-bottom: none;
+      }
+
+      .update-item h3 {
+         font-size: 18px;
+         margin-bottom: 5px;
+         font-weight: bold;
+      }
+
+      .update-item p {
+         font-size: 16px;
+         color: #555;
+      }
+
+      .update-item .date {
+         font-size: 14px;
+         color: #888;
+         margin-top: 5px;
+      }
+   </style>
+
+</head>
+<body>
+
+<header class="header">
+   <section class="flex">
+      <a href="home.html" class="logo">VIDYASETU.</a>
+      <form action="search.html" method="post" class="search-form">
+         <input type="text" name="search_box" required placeholder="Search..." maxlength="100">
+         <button type="submit" class="fas fa-search"></button>
+      </form>
+      <div class="icons">
+         <div id="menu-btn" class="fas fa-bars"></div>
+         <div id="search-btn" class="fas fa-search"></div>
+         <div id="user-btn" class="fas fa-user"></div>
+         <div id="toggle-btn" class="fas fa-sun"></div>
+      </div>
+      <div class="profile">
+         <img src="images/pic-1.jpg" class="image" alt="">
+         <h3 class="name">Student's Name</h3>
+         <p class="role">Student</p>
+         <a href="profile.html" class="btn">view profile</a>
+         <div class="flex-btn">
+            <a href="login.html" class="option-btn">login</a>
+            <a href="register.html" class="option-btn">register</a>
+         </div>
+      </div>
+   </section>
+</header>   
+
+<div class="side-bar">
+   <div id="close-btn">
+      <i class="fas fa-times"></i>
+   </div>
+   <div class="profile">
+      <img src="images/pic-1.jpg" class="image" alt="">
+      <h3 class="name">Student's Name</h3>
+      <p class="role">Student</p>
+      <a href="profile.html" class="btn">view profile</a>
+   </div>
+   <nav class="navbar">
+      <a href="home.html"><i class="fas fa-home"></i><span>home</span></a>
+      <a href="Acedemic_Performance.html"><i class="fas fa-question"></i><span>Acedemic_Performance</span></a>
+      <a href="teachers.html"><i class="fas fa-chalkboard-user"></i><span>teachers</span></a>
+      <a href="contact.html"><i class="fas fa-headset"></i><span>contact us</span></a>
+   </nav>
+</div>
+
+<section class="teacher-updates">
+   <h1 class="heading">Updates from Teacher</h1>
+   <div class="updates-list">
+      <div class="update-item">
+         <h3>Performance Update: Mathematics</h3>
+         <p>Your child has shown significant improvement in mathematics. They have excelled in recent quizzes and actively participate in class discussions. Keep encouraging practice!</p>
+         <p class="date">Date: 14th September 2024</p>
+      </div>
+
+      <div class="update-item">
+         <h3>Participation in Group Activities</h3>
+         <p>Your child displayed excellent teamwork and leadership skills during recent group projects. They took initiative and helped others understand complex topics.</p>
+         <p class="date">Date: 10th September 2024</p>
+      </div>
+
+      <div class="update-item">
+         <h3>Areas of Improvement: Reading Comprehension</h3>
+         <p>Although progressing well, your child could benefit from additional practice with reading comprehension. We recommend allocating time for reading outside of school hours.</p>
+         <p class="date">Date: 8th September 2024</p>
+      </div>
+   </div>
+</section>
+
+<section class="online-ptm">
+   <h1 class="heading">Online PTM Booking</h1>
+   <div class="booking-form">
+      <h2>Book a Meeting with Your Child's Teacher</h2>
+      <p>Please fill out the form below to schedule an online Student-teacher meeting.</p>
+      <form action="submit_ptm_booking.php" method="post">
+         <label for="Student-name">Student's Name:</label>
+         <input type="text" id="Student-name" name="Student_name" required>
+
+         <label for="email">Email Address:</label>
+         <input type="email" id="email" name="email" required>
+
+         <label for="child-name">Child's Name:</label>
+         <input type="text" id="child-name" name="child_name" required>
+
+         <label for="preferred-date">Preferred Date:</label>
+         <input type="date" id="preferred-date" name="preferred_date" required>
+
+         <label for="preferred-time">Preferred Time:</label>
+         <input type="time" id="preferred-time" name="preferred_time" required>
+
+         <label for="additional-info">Additional Information:</label>
+         <textarea id="additional-info" name="additional_info" rows="4" placeholder="Any specific topics to discuss?"></textarea>
+
+         <button type="submit" class="btn">Book Appointment</button>
+      </form>
+   </div>
+</section>
+
+
+
+<script type="text/javascript">
+   var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+   (function() {
+      var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+      s1.async = true;
+      s1.src = 'https://embed.tawk.to/YOUR_TAWK_ID_HERE/default';
+      s1.charset = 'UTF-8';
+      s1.setAttribute('crossorigin', '*');
+      s0.StudentNode.insertBefore(s1, s0);
+   })();
+</script>
+
+</body>
+</html>
